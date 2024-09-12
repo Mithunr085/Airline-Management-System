@@ -4,11 +4,11 @@
 <hr>
 
 <h3>Techology : </h3> 
-            1] Frontend : HTML,CSS,JS,TS,Angular,Bootstrap
+            1] <b>Frontend </b>: HTML,CSS,JS,TS,Angular,Bootstrap
 <br>
-            2] Backend : Springboot With JPA
+            2]<b> Backend</b> : Springboot With JPA
 <br>
-            3] Database : SQL   
+            3]<b> Database</b>: SQL   
 <br>
 <br>
             
