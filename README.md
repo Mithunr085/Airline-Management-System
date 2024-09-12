@@ -5,7 +5,9 @@
 
 <h3>Techology : </h3> 
             1] Frontend : HTML,CSS,JS,TS,Angular,Bootstrap
+<br>
             2] Backend : Springboot With JPA
+<br>
             3] Database : SQL   
 <br>
 <br>
