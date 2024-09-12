@@ -10,9 +10,4 @@ public class AirlineManagementSystemApplication {
 		SpringApplication.run(AirlineManagementSystemApplication.class, args);
 	}
 
-	
-	/*
-	 razorpay.key=rzp_test_g4dPtSsipznM25
-			 razorpay.secret=7DUPt15XA1LH8oWbKNwaEqyk
-	 */
 }

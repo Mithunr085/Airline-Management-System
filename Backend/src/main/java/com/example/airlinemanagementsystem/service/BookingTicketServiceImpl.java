@@ -24,11 +24,10 @@ import java.util.Optional;
 @Service
 public class BookingTicketServiceImpl implements BookingTicketService {
 
-
-    private static final String KEY = "rzp_test_g4dPtSsipznM25";
-    private static final String KEY_SECRET = "7DUPt15XA1LH8oWbKNwaEqyk";
+    private static final String KEY = "Generate-Your-Key";
+    private static final String KEY_SECRET = "Generate-Your-SecretId";
     private static final String CURRENCY = "INR";
-	
+
     @Autowired
     private BookingTicketRepository bookingTicketRepository;
 
@@ -37,7 +36,7 @@ public class BookingTicketServiceImpl implements BookingTicketService {
 
     @Autowired
     private PassengerRepository passengerRepository;
-    
+
     @Autowired
     private UserRepository userRepository;
 
@@ -49,7 +48,7 @@ public class BookingTicketServiceImpl implements BookingTicketService {
         if (passenger == null) {
             throw new RuntimeException("Passenger details are missing");
         }
-        
+
         if (!isValidPassenger(passenger)) {
             throw new RuntimeException("Passenger details are invalid: " + getPassengerValidationErrors(passenger));
         }
@@ -85,10 +84,10 @@ public class BookingTicketServiceImpl implements BookingTicketService {
 
     private boolean isValidPassenger(Passenger passenger) {
         return passenger != null &&
-               passenger.getName() != null && !passenger.getName().trim().isEmpty() &&
-               passenger.getGender() != null && !passenger.getGender().trim().isEmpty() &&
-               passenger.getAge() >= 5 &&
-               passenger.getPhoneNumber() != null && passenger.getPhoneNumber().matches("\\d{10}");
+                passenger.getName() != null && !passenger.getName().trim().isEmpty() &&
+                passenger.getGender() != null && !passenger.getGender().trim().isEmpty() &&
+                passenger.getAge() >= 5 &&
+                passenger.getPhoneNumber() != null && passenger.getPhoneNumber().matches("\\d{10}");
     }
 
     private String getPassengerValidationErrors(Passenger passenger) {
@@ -116,8 +115,6 @@ public class BookingTicketServiceImpl implements BookingTicketService {
         return user != null && user.getUserId() > 0;
     }
 
-
-
     @Override
     @Transactional
     public void deleteBookingById(int bookingId) throws BookingTicketNotFoundException {
@@ -143,7 +140,7 @@ public class BookingTicketServiceImpl implements BookingTicketService {
         }
         return tickets;
     }
-    
+
     @Override
     @Transactional(readOnly = true)
     public List<BookingTicket> findByUser_UserId(int userId) throws BookingTicketNotFoundException {
@@ -154,32 +151,32 @@ public class BookingTicketServiceImpl implements BookingTicketService {
         return tickets;
     }
 
-	@Override
-	public TransactionDetails createTransaction(Double amount) {
-		try {
+    @Override
+    public TransactionDetails createTransaction(Double amount) {
+        try {
 
             JSONObject jsonObject = new JSONObject();
-            jsonObject.put("amount", (amount * 100) );
+            jsonObject.put("amount", (amount * 100));
             jsonObject.put("currency", CURRENCY);
 
             RazorpayClient razorpayClient = new RazorpayClient(KEY, KEY_SECRET);
 
             com.razorpay.Order order = razorpayClient.orders.create(jsonObject);
 
-            TransactionDetails transactionDetails =  prepareTransactionDetails(order);
+            TransactionDetails transactionDetails = prepareTransactionDetails(order);
             return transactionDetails;
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return null;
-	}
-	
-	 private TransactionDetails prepareTransactionDetails(com.razorpay.Order order) {
-	        String orderId = order.get("id");
-	        String currency = order.get("currency");
-	        Integer amount = order.get("amount");
+    }
 
-	        TransactionDetails transactionDetails = new TransactionDetails(orderId, currency, amount, KEY);
-	        return transactionDetails;
-	    }
+    private TransactionDetails prepareTransactionDetails(com.razorpay.Order order) {
+        String orderId = order.get("id");
+        String currency = order.get("currency");
+        Integer amount = order.get("amount");
+
+        TransactionDetails transactionDetails = new TransactionDetails(orderId, currency, amount, KEY);
+        return transactionDetails;
+    }
 }
