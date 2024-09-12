@@ -1,0 +1,44 @@
+<div class="container">
+    <h1>Booking Details</h1>
+
+    <!-- Search Section -->
+    <div class="search-container">
+        <input type="text" [(ngModel)]="flightNum" placeholder="Search by Flight Number">
+        <button (click)="searchFlight()">Search</button>
+    </div>
+
+    <!-- view-bookings.component.html -->
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Flight Number</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Arrival Time</th>
+                <th>Departure Time</th>
+                <th>Passenger Name</th>
+                <th>Price</th>
+                <th>Payment</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let booking of bookings">
+                <td>{{ booking.bookingId }}</td>
+                <td>{{ booking.flight?.flightNumber }}</td>
+                <td>{{ booking.flight?.source }}</td>
+                <td>{{ booking.flight?.destination }}</td>
+                <td>{{ booking.flight?.arrivalTime }}</td>
+                <td>{{ booking.flight?.departureTime }}</td>
+                <td>{{ booking.passenger?.name }}</td>
+                <td>{{ booking.price }}</td>
+                <td>{{booking.paymentStatus}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>

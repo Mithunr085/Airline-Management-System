@@ -1,0 +1,255 @@
+/* General Carousel Styles */
+.carousel {
+    border-top: 2px solid #3498db;
+        /* Top border */
+        border-bottom: 2px solid #3498db;
+        /* Bottom border */
+        border-left: none;
+        /* No left border */
+        border-right: none;
+        /* No right border */
+    /* Thinner border around the carousel */
+    border-radius: 0;
+    /* No rounded corners */
+    overflow: hidden;
+    /* Ensure content does not overflow the border */
+}
+
+.carousel-item {
+    height: 500px;
+    /* Set a fixed height for the carousel items */
+    background-color: #000;
+    /* Fallback color if images are not loaded */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures that the image covers the entire carousel item */
+    border-radius: 0;
+    /* No rounded corners for images */
+    transition: border-radius 0.5s ease;
+    /* Smooth transition for zoom and border-radius */
+}
+
+/* Carousel Captions */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent background for captions */
+    padding: 20px;
+    border-radius: 0;
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    /* White text color for captions */
+    text-transform: uppercase;
+}
+
+.carousel-caption p {
+    font-size: 1.25rem;
+    color: #e0e0e0;
+    /* Light grey text for the caption description */
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Add a background color to the control icons */
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* Carousel Indicators */
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    /* White indicators */
+}
+
+.carousel-indicators .active {
+    background-color: #007bff;
+    /* Active indicator color (Bootstrap primary color) */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px;
+        /* Adjust height for smaller screens */
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.5rem;
+        /* Smaller font size for captions on mobile */
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+        /* Smaller font size for description on mobile */
+    }
+}
+
+/* Styling for the container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Inline block layout for form fields and button */
+.form-inline-block {
+    display: inline-block;
+    vertical-align: middle;
+    /* Align vertically in the middle */
+    margin-right: 20px;
+    /* Space between elements */
+    margin-bottom: 15px;
+    /* Space below each element */
+}
+
+/* General styling for labels */
+.form-inline-block label {
+    display: inline-block;
+    vertical-align: middle;
+    /* Align vertically in the middle */
+}
+
+/* Specific styling for the Source field */
+.source-field label {
+    margin-right: 20px;
+    /* More space between label and input for Source */
+}
+
+.source-field input {
+    width: 200px;
+    /* Reduced input box size */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    vertical-align: middle;
+    /* Align vertically in the middle */
+}
+
+/* Specific styling for the Destination field */
+.destination-field label {
+    margin-right: 20px;
+    /* More space between label and input for Destination */
+}
+
+.destination-field input {
+    width: 200px;
+    /* Reduced input box size */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    vertical-align: middle;
+    /* Align vertically in the middle */
+}
+
+/* Styling for the Search button */
+.form-inline-block button {
+    padding: 7px 20px;
+    /* Adjusted padding for alignment */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    vertical-align: middle;
+    /* Align vertically in the middle */
+}
+
+.form-inline-block button:hover {
+    background-color: #0056b3;
+}
+
+/* Alert styles */
+.alert {
+    font-size: 1rem;
+}
+
+/* Styling for the Available Flights table */
+.table {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+    /* Allows horizontal scrolling on small screens */
+}
+
+.table thead th {
+    background-color: #06821c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.table tbody td {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Stripe table rows for odd rows */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table {
+        font-size: 0.875rem;
+        /* Reduce font size for smaller screens */
+    }
+
+    .table th,
+    .table td {
+        padding: 8px;
+        /* Adjust padding for smaller screens */
+    }
+
+    /* Adjust table header to be stacked on small screens */
+    .table thead {
+        display: block;
+        overflow: hidden;
+    }
+
+    .table tbody {
+        display: block;
+        overflow-y: auto;
+        /* Allows vertical scrolling if table content is too long */
+        height: 400px;
+        /* Fixed height to enable scrolling */
+    }
+
+    .table thead th {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .table tbody tr {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        /* Show label for each cell on smaller screens */
+        font-weight: bold;
+        flex: 1;
+        text-align: left;
+    }
+}

@@ -1,0 +1,45 @@
+<div class="card-container">
+  <div class="card">
+    <h2>Login</h2>
+    <form (ngSubmit)="loginUser()" #loginForm="ngForm" novalidate>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="emailId" name="email" required email #emailField="ngModel"
+          aria-describedby="emailHelp" [ngClass]="{'invalid': emailField.invalid && emailField.touched}">
+
+        <div *ngIf="emailField.invalid && emailField.touched" class="error">
+          <small *ngIf="emailField.errors?.['required']">Email is required.</small>
+          <small *ngIf="emailField.errors?.['email']">Please enter a valid email.</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <div class="password-container">
+          <input [type]="passwordFieldType" id="password" [(ngModel)]="password" name="password" required minlength="6"
+            #passwordField="ngModel" [ngClass]="{'invalid': passwordField.invalid && passwordField.touched}">
+
+          <i class="toggle-password" (click)="togglePasswordVisibility()">
+            <i [class]="passwordFieldType === 'password' ? 'fa fa-eye' : 'fa fa-eye-slash'"></i>
+          </i>
+        </div>
+
+        <div *ngIf="passwordField.invalid && passwordField.touched" class="error">
+          <small *ngIf="passwordField.errors?.['required']">Password is required.</small>
+          <small *ngIf="passwordField.errors?.['minlength']">Password must be at least 6 characters long.</small>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        <a class="forgot-password" routerLink="/forgotpassword">Forgot Password?</a>
+      </div>
+
+      <div class="form-footer">
+        <span>Don't have an account?</span>
+        <a class="register-link" routerLink="/signup">Register</a>
+      </div>
+      <div class="error">{{ errormessage }}</div>
+    </form>
+  </div>
+</div>

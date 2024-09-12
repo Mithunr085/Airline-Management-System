@@ -1,0 +1,76 @@
+.ticket-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.ticket-card {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    position: relative;
+}
+
+.ticket-header {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f4f4f4;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.ticket-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ticket-details {
+    flex: 1;
+    margin-right: 20px;
+    /* Space between text and image */
+}
+
+.ticket-image img {
+    max-width: 500px;
+    /* Adjust the size as needed */
+    height: 200px;
+    border-radius: 8px;
+}
+
+.ticket-details p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.ticket-actions {
+    margin-top: 15px;
+}
+
+.btn-download {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #45a049;
+}
+
+.unpaid-status {
+    color: #e74c3c;
+    font-size: 16px;
+    margin-top: 10px;
+}

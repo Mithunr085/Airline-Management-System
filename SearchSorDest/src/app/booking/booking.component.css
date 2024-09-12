@@ -1,0 +1,197 @@
+.booking-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    width: 30%;
+}
+
+.form-group input {
+    width: 65%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the container */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Inline block layout for form fields and button */
+.form-inline-block {
+    display: inline-block;
+    vertical-align: middle;
+    /* Align vertically in the middle */
+    margin-right: 20px;
+    /* Space between elements */
+    margin-bottom: 15px;
+    /* Space below each element */
+}
+
+/* General styling for labels */
+.form-inline-block label {
+    display: inline-block;
+    vertical-align: middle;
+    /* Align vertically in the middle */
+}
+
+/* Specific styling for the Source field */
+.source-field label {
+    margin-right: 20px;
+    /* More space between label and input for Source */
+}
+
+.source-field input {
+    width: 200px;
+    /* Reduced input box size */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    vertical-align: middle;
+    /* Align vertically in the middle */
+}
+
+/* Specific styling for the Destination field */
+.destination-field label {
+    margin-right: 20px;
+    /* More space between label and input for Destination */
+}
+
+.destination-field input {
+    width: 200px;
+    /* Reduced input box size */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    vertical-align: middle;
+    /* Align vertically in the middle */
+}
+
+/* Styling for the Search button */
+.form-inline-block button {
+    padding: 7px 20px;
+    /* Adjusted padding for alignment */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    vertical-align: middle;
+    /* Align vertically in the middle */
+}
+
+.form-inline-block button:hover {
+    background-color: #0056b3;
+}
+
+/* Alert styles */
+.alert {
+    font-size: 1rem;
+}
+
+/* Styling for the Available Flights table */
+.table {
+    width: 100%;
+    margin-top: 20px;
+    overflow-x: auto;
+    /* Allows horizontal scrolling on small screens */
+}
+
+.table thead th {
+    background-color: #06821c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.table tbody td {
+    text-align: center;
+    padding: 10px;
+}
+
+/* Stripe table rows for odd rows */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .table {
+        font-size: 0.875rem;
+        /* Reduce font size for smaller screens */
+    }
+
+    .table th,
+    .table td {
+        padding: 8px;
+        /* Adjust padding for smaller screens */
+    }
+
+    /* Adjust table header to be stacked on small screens */
+    .table thead {
+        display: block;
+        overflow: hidden;
+    }
+
+    .table tbody {
+        display: block;
+        overflow-y: auto;
+        /* Allows vertical scrolling if table content is too long */
+        height: 400px;
+        /* Fixed height to enable scrolling */
+    }
+
+    .table thead th {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .table tbody tr {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table tbody td {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        /* Show label for each cell on smaller screens */
+        font-weight: bold;
+        flex: 1;
+        text-align: left;
+    }
+}

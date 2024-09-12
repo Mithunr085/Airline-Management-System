@@ -1,0 +1,13 @@
+.container {
+    border-radius: 5px;
+    box-shadow: rgb(109 109 125 / 28%) 0px 4px 7px 12px;
+    padding: 20px;
+    background-color: white;
+    margin-top: 40px;
+}
+.contact{
+    background-color: rgb(193, 214, 236);
+}
+* {
+    cursor: url('../../assets/PlanePoint.png'), auto;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Payment Details</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Booking ID</th>
+                <th>Passenger Name</th>
+                <th>Flight Number</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Arrival Time</th>
+                <th>Departure Time</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let booking of bookings">
+                <td>{{ booking.bookingId }}</td>
+                <td>{{ booking.passenger?.name || 'N/A' }}</td>
+                <td>{{ booking.flight?.flightNumber || 'N/A' }}</td>
+                <td>{{ booking.flight?.source || 'N/A' }}</td>
+                <td>{{ booking.flight?.destination || 'N/A' }}</td>
+                <td>{{ booking.flight?.arrivalTime || 'N/A' }}</td>
+                <td>{{ booking.flight?.departureTime || 'N/A' }}</td>
+                <td>
+                    <button (click)="makePayment(booking)" class="btn btn-primary">Pay Now</button>
+                    <button (click)="cancelBooking(booking.bookingId)" class="btn btn-danger">Cancel Booking</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

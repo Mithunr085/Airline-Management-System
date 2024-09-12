@@ -1,0 +1,125 @@
+/* Header Styles */
+.header {
+  background-color: rgb(229, 241, 254);
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  /* Fixes the header to the top */
+  top: 0;
+  /* Positions the header at the top */
+  width: 100%;
+  /* Ensures the header spans the full width */
+  z-index: 1000;
+  /* Keeps the header on top of other content */
+  border-bottom: 2px solid #3498db;
+  /* Add a border to the bottom of the header */
+}
+
+.logo {
+  font-size: 24px;
+  color: black;
+  /* Logo text color */
+  text-decoration: none;
+  /* Remove underline from the logo link */
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation Items Styles */
+.nav-items {
+  display: flex;
+  gap: 20px;
+  /* Increased gap for better spacing */
+  align-items: center;
+  /* Ensures icons and text are aligned */
+}
+
+.nav-items i {
+  margin-right: 2px;
+  /* Space between icon and text */
+}
+
+.nav-items a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  /* Aligns text with icon */
+}
+
+.nav-items a.selected {
+  font-weight: bold;
+}
+
+.nav-items a:hover {
+  text-decoration: none;
+  font-weight: bold;
+  color: blue;
+}
+
+/* Ensure content does not hide behind the header */
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 60px;
+  /* Adjust this value according to the height of your header */
+}
+
+/* Container Styles */
+.container {
+  border-radius: 5px;
+  box-shadow: rgb(109 109 125 / 28%) 0px 4px 7px 12px;
+  padding: 20px;
+  background-color: rgb(229, 241, 254);
+}
+
+/* Contact Section Styles */
+.contact {
+  padding-top: 20px;
+  /* Adjust to ensure content is not hidden behind the header */
+}
+
+.contact .tittle-w3l {
+  border-bottom: 2px solid black;
+  padding-bottom: 5px;
+}
+
+/* General Contact Grid Styles */
+.contact .contact-grid1 {
+  background-color: #fff;
+  /* Optional: add background to each contact grid item */
+  padding: 20px;
+  border-radius: 5px;
+  /* Optional: add border radius for rounded corners */
+}
+
+.contact .contact-grid1 .con-ic {
+  margin-bottom: 10px;
+}
+
+.contact .contact-grid1 i {
+  font-size: 2rem;
+  /* Adjust icon size if needed */
+}
+
+.contact .contact-grid1 h3 {
+  font-weight: bold;
+}
+
+.contact .contact-grid1 p a {
+  color: black;
+  text-decoration: none;
+}
+
+.contact .contact-grid1 p a:hover {
+  text-decoration: underline;
+}
+
+/* Cursor Style */
+* {
+  cursor: url('../../assets/PlanePoint.png'), auto;
+}

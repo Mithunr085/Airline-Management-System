@@ -1,0 +1,19 @@
+<header class="header">
+    <div class="logo-section">
+        <a class="logo"><i class="fa fa-plane"></i> {{userName}}</a>
+    </div>
+    <div class="title-section">
+        <span>AIRLINE - BOOKING - SYSTEM</span>
+    </div>
+    <div class="menu-icon" (click)="toggleMenu()">
+        <i [class]="menuOpen ? 'fa fa-times' : 'fa fa-bars'"></i>
+    </div>
+    <nav class="nav-items" [class.open]="menuOpen">
+        <a (click)="routerToLink('/user-home')" [class.selected]="url === '/user-home'">Home</a>
+        <a (click)="routerToLink('/book')" [class.selected]="url === '/book'">Book Tkt</a>
+
+        <a (click)="routerToLink('/payment')" [class.selected]="url === '/payment'">Wallet or Payment</a>
+        <a (click)="routerToLink('/view-ticket')" [class.selected]="url === '/view-ticket'">View Tkts</a>
+        <a (click)="routerToLink('/home')" [class.selected]="url === '/home'">Logout</a>
+    </nav>
+</header>

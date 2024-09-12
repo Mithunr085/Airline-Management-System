@@ -1,0 +1,139 @@
+/* Ensure the entire page has the background color */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(193, 214, 236);
+  /* Light background color */
+  min-height: 100vh;
+  /* Use min-height to allow for content taller than the viewport */
+}
+
+/* Container styles */
+body {
+  padding-top: 70px;
+  /* Adjust this value based on the header height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 20px;
+  margin: 150px auto 0 auto;
+  /* Adjust this value if necessary */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin-bottom: 90px;
+}
+
+/* Heading styles */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  width: 100%;
+}
+
+/* Form group styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Button styles */
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Error message styles */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}
+
+
+.form-group input.invalid {
+  border-color: red;
+  /* Red border for invalid input fields */
+}
+
+.form-group .error {
+  color: red;
+  text-align: left;
+  /* Align validation errors to the left */
+  font-size: 15px;
+  /* Optional: make the font size smaller */
+  margin-top: 5px;
+}
+
+.error small {
+  display: block;
+}
+
+button[disabled] {
+  background-color: #ccc;
+  /* Gray background for disabled button */
+  cursor: not-allowed;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px;
+  /* Adjust padding to make room for the toggle button */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #555;
+  font-size: 18px;
+}

@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Flight Details</h2>
+
+  <div class="search-bar">
+    <div class="form-inline-block source-field">
+      <label for="source">Source:</label>
+      <input type="text" id="source" [(ngModel)]="source" placeholder="Source" />
+    </div>
+
+    <div class="form-inline-block destination-field">
+      <label for="destination">Destination:</label>
+      <input type="text" id="destination" [(ngModel)]="destination" placeholder="Destination" />
+    </div>
+
+    <button (click)="searchFlights()">Search</button>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <table class="flight-table" *ngIf="flights.length > 0">
+    <thead>
+      <tr>
+        <th>Flight Number</th>
+        <th>Source</th>
+        <th>Destination</th>
+        <th>Arrival Time</th>
+        <th>Departure Time</th>
+        <th>Available Seats</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let flight of flights">
+        <td>{{ flight.flightNumber }}</td>
+        <td>{{ flight.source }}</td>
+        <td>{{ flight.destination }}</td>
+        <td>{{ flight.arrivalTime }}</td>
+        <td>{{ flight.departureTime }}</td>
+        <td>{{ flight.availableSeats}}</td>
+        <td>{{ flight.price }}</td>
+        <td>
+          <button (click)="editFlight(flight)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="flights.length === 0">
+    No flights available.
+  </div>
+</div>

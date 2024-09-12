@@ -1,0 +1,5 @@
+<app-header *ngIf="shouldShowHeader()" routerLinkActive="router-link-active"></app-header>
+<app-user-header *ngIf="shouldShowUserHeader()" routerLinkActive="router-link-active"></app-user-header>
+<app-admin-header *ngIf="shouldShowAdminHeader()" routerLinkActive="router-link-active"></app-admin-header>
+<router-outlet />
+<app-footer></app-footer>

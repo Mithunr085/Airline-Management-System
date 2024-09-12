@@ -1,0 +1,111 @@
+/* Existing styles */
+.shadow {
+  box-shadow: 0 .5rem 1rem rgb(16, 40, 85) !important;
+  background-color: rgb(229, 241, 254);
+}
+
+.menu-item-card {
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item-card:hover {
+  transform: translateY(-10px);
+  /* Rises the card slightly */
+  background-color: rgb(201, 238, 241);
+  /* Change background color on hover */
+  color: #fff;
+  /* Change text color on hover */
+}
+
+.menu-item-card:hover .menu-card-title {
+  color: black;
+  /* Change title color on hover */
+}
+
+h2 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: x-large;
+  background-color: rgb(229, 241, 254);
+  align-items: center;
+  color: rgb(16, 40, 85);
+  font-weight: 500;
+}
+
+img {
+  width: 100vw;
+  height: 500px;
+  background-color: rgb(229, 241, 254);
+}
+
+#exploreMenuSection img {
+  height: 203px;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 520px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url('../../assets/Airport1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.intro h1 {
+  font-family: sans-serif;
+  font-size: 60px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.intro p {
+  font-size: 20px;
+  color: #d1d1d1;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.intro button {
+  background-color: #5edaf0;
+  color: #000;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+}
+
+marquee {
+  color: whitesmoke;
+  font-size: 100px;
+  font-size: x-large;
+  align-items: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: #000;
+}
+
+.intro a {
+  text-decoration: none;
+  background-color: #fff;
+  color: var(--primary-color);
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+.intro a:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+* {
+  cursor: url('../../assets/PlanePoint.png'), auto;
+}

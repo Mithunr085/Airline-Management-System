@@ -1,0 +1,51 @@
+<div class="container">
+  <h2>Sign Up</h2>
+  <form (ngSubmit)="registerUser()" #signUpForm="ngForm" novalidate>
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" [(ngModel)]="user.firstName" name="firstName" required #firstNameField="ngModel"
+        [ngClass]="{'invalid': firstNameField.invalid && firstNameField.touched}">
+      <div *ngIf="firstNameField.invalid && firstNameField.touched" class="error">
+        <small *ngIf="firstNameField.errors?.['required']">First Name is required.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" [(ngModel)]="user.lastName" name="lastName" required #lastNameField="ngModel"
+        [ngClass]="{'invalid': lastNameField.invalid && lastNameField.touched}">
+      <div *ngIf="lastNameField.invalid && lastNameField.touched" class="error">
+        <small *ngIf="lastNameField.errors?.['required']">Last Name is required.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="user.emailId" name="email" required email #emailField="ngModel"
+        [ngClass]="{'invalid': emailField.invalid && emailField.touched}">
+      <div *ngIf="emailField.invalid && emailField.touched" class="error">
+        <small *ngIf="emailField.errors?.['required']">Email is required.</small>
+        <small *ngIf="emailField.errors?.['email']">Please enter a valid email.</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <div class="password-container">
+        <input [type]="passwordFieldType" id="password" [(ngModel)]="user.password" name="password" required
+          minlength="6" #passwordField="ngModel"
+          [ngClass]="{'invalid': passwordField.invalid && passwordField.touched}">
+        <i class="toggle-password" (click)="togglePasswordVisibility()">
+          <i [class]="passwordFieldType === 'password' ? 'fa fa-eye' : 'fa fa-eye-slash'"></i>
+        </i>
+      </div>
+      <div *ngIf="passwordField.invalid && passwordField.touched" class="error">
+        <small *ngIf="passwordField.errors?.['required']">Password is required.</small>
+        <small *ngIf="passwordField.errors?.['minlength']">Password must be at least 6 characters long.</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="signUpForm.invalid">Register</button>
+    <div class="error">{{errorMessage}}</div>
+  </form>
+</div>

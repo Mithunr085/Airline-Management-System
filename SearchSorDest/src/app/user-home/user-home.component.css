@@ -1,0 +1,87 @@
+/* General Carousel Styles */
+.carousel-item {
+    height: 500px;
+    /* Set a fixed height for the carousel items */
+    background-color: #000;
+    /* Fallback color if images are not loaded */
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures that the image covers the entire carousel item */
+    border-radius: 15px;
+    /* Rounded corners */
+    transition: border-radius 0.5s ease;
+    /* Smooth transition for zoom and border-radius */
+}
+
+/* Zoom and Rounded Corners on Hover */
+/* .carousel-item:hover img {
+    transform: scale(1.05); Zoom in slightly 
+    border-radius: 25px; Increase rounding on hover } 
+    */
+
+/* Carousel Captions */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    /*Semi-transparent background for captions */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    /* White text color for captions */
+    text-transform: uppercase;
+}
+
+.carousel-caption p {
+    font-size: 1.25rem;
+    color: #e0e0e0;
+    /* Light grey text for the caption description */
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Add a background color to the control icons */
+    padding: 10px;
+    border-radius: 50%;
+}
+
+/* Carousel Indicators */
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #fff;
+    /* White indicators */
+}
+
+.carousel-indicators .active {
+    background-color: #007bff;
+    /* Active indicator color (Bootstrap primary color) */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 300px;
+        /* Adjust height for smaller screens */
+    }
+
+    .carousel-caption h5 {
+        font-size: 1.5rem;
+        /* Smaller font size for captions on mobile */
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+        /* Smaller font size for description on mobile */
+    }
+}

@@ -1,0 +1,35 @@
+<div class="ticket-container" *ngIf="tickets && tickets.length > 0; else noTickets">
+    <div *ngFor="let ticket of tickets" class="ticket-card">
+        <div class="ticket-header">
+            <h3>Flight: {{ ticket.flight.flightNumber }}</h3>
+        </div>
+        <div class="ticket-content">
+            <div class="ticket-details">
+                <p><strong>Passenger:</strong> {{ ticket.passenger.name }}</p>
+                <p><strong>Departure:</strong> {{ ticket.flight.departureTime }}</p>
+                <p><strong>Arrival:</strong> {{ ticket.flight.arrivalTime }}</p>
+                <p><strong>Source:</strong> {{ ticket.flight.source }}</p>
+                <p><strong>Destination:</strong> {{ ticket.flight.destination }}</p>
+                <p><strong>Price:</strong> {{ ticket.price | currency: 'INR':'symbol' }}</p>
+                <p><strong>Status:</strong> {{ ticket.status }}</p>
+            </div>
+            <div class="ticket-image">
+                <!-- Replace with the appropriate image URL -->
+                <img src="../../assets/Airport2.jpg" alt="Flight Image">
+            </div>
+        </div>
+        <div class="ticket-actions">
+            <button *ngIf="canDownload(ticket)" (click)="generatePDF(ticket)" class="btn-download">
+                Download PDF
+            </button>
+            <p *ngIf="ticket.status !== 'Paid' && ticket.status !== 'Delivered'" class="unpaid-status">
+                Unpaid - Please complete payment to download your ticket
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- If no tickets are available -->
+<ng-template #noTickets>
+    <p>No tickets available. Please book a flight.</p>
+</ng-template>

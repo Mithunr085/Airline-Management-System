@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Flight Details</h2>
+    <form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="flightNumber">Flight Number:</label>
+        <input id="flightNumber" formControlName="flightNumber" type="text" class="form-control" placeholder="Enter flight number">
+      </div>
+      <div class="form-group">
+        <label for="source">Source:</label>
+        <input id="source" formControlName="source" type="text" class="form-control" placeholder="Enter source">
+      </div>
+      <div class="form-group">
+        <label for="destination">Destination:</label>
+        <input id="destination" formControlName="destination" type="text" class="form-control" placeholder="Enter destination">
+      </div>
+      <div class="form-group">
+        <label for="arrivalTime">Arrival Time:</label>
+        <input id="arrivalTime" formControlName="arrivalTime" type="text" class="form-control" placeholder="Enter arrival time">
+      </div>
+      <div class="form-group">
+        <label for="departureTime">Departure Time:</label>
+        <input id="departureTime" formControlName="departureTime" type="text" class="form-control" placeholder="Enter departure time">
+      </div>
+      <form [formGroup]="flightForm" (ngSubmit)="onSubmit()">
+        <!-- Existing form fields -->
+        <div class="form-group">
+          <label for="availableSeats">Number of Seats:</label>
+          <input id="availableSeats" formControlName="availableSeats" type="number" class="form-control" placeholder="Enter number of seats">
+        </div>
+        <div class="form-group">
+          <label for="price">Price:</label>
+          <input id="price" formControlName="price" type="number" class="form-control" placeholder="Enter price">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </form>
+  </div>
+  

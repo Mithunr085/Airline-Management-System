@@ -1,0 +1,14 @@
+<header class="header">
+   <a class="logo"><i class="fa fa-plane fa-rotate-by" style="--fa-rotate-angle: -135deg;"></i>Airline Booking </a>
+
+   <nav class="nav-items">
+      <i class="fa fa-home"></i>
+      <a (click)="navigateTo('/')" [class.selected]="isSelected('/')">Home</a>
+      <i class="fa fa-question-circle"></i>
+      <a (click)="navigateTo('/about-us')" [class.selected]="isSelected('/aboutus')">About-us</a>
+      <i class="fa fa-user-circle"></i>
+      <a (click)="navigateTo('/login')" [class.selected]="isSelected('/login')">Login</a>
+      <i class="fa fa-mobile"></i>
+      <a (click)="navigateTo('/contact-us')" [class.selected]="isSelected('/contactus')">Contact-us</a>
+   </nav>
+</header>

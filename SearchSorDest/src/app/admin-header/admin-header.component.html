@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="logo-section">
+    <a class="logo"><i class="fa fa-plane"></i> {{userName}}</a>
+  </div>
+  <div class="title-section">
+    <span>AIRLINE - BOOKING - SYSTEM</span>
+  </div>
+  <div class="menu-icon" (click)="toggleMenu()">
+    <i [class]="menuOpen ? 'fa fa-times' : 'fa fa-bars'"></i>
+  </div>
+  <nav class="nav-items" [class.open]="menuOpen">
+    <a (click)="routerToLink('/admin-home')" [class.selected]="url === '/admin-home'">Home</a>
+    <a (click)="routerToLink('/add-flight')" [class.selected]="url === '/add-flight'">Add Flight</a>
+    <a (click)="routerToLink('/view-flights')" [class.selected]="url === '/view-flights'">View Flights</a>
+    <a (click)="routerToLink('/update-flight')" [class.selected]="url === '/update-flight'">Update Flight</a>
+    <a (click)="routerToLink('/view-bookings')" [class.selected]="url === '/view-bookings'">View Bookings</a>
+    <a (click)="routerToLink('/home')" [class.selected]="url === '/home'">Logout</a>
+  </nav>
+</header>
